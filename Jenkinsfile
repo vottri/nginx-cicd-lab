@@ -21,7 +21,7 @@ pipeline {
                 script {
                     IMAGE_TAG = "build-${env.BUILD_NUMBER}"
                     sh """
-                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ./src
                     """
                 }
             }
