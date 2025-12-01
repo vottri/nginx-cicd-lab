@@ -13,6 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git credentialsId: "${GIT_CREDENTIAL}", url: "https://github.com/vottri/nginx-cicd-lab.git"
+                branch: "master"
             }
         }
 
@@ -58,7 +59,8 @@ pipeline {
                 git commit -m "Jenkins CI: update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
                 git push https://${GIT_USER}:${GIT_PASS}@github.com/vottri/nginx-cicd-lab.git HEAD:master
                 '''
-            }
+                }
+            }    
         }
     }
 }
