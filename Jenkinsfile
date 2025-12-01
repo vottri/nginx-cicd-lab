@@ -13,7 +13,6 @@ pipeline {
         stage('Checkout') {
             steps {
                 git credentialsId: "${GIT_CREDENTIAL}", url: "https://github.com/vottri/nginx-cicd-lab.git"
-                branch: "master"
             }
         }
 
