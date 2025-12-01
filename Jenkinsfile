@@ -53,7 +53,7 @@ pipeline {
                   git config user.name "vottri"
                   git add charts/nginx/values.yaml
                   git commit -m "Update image tag to ${IMAGE_TAG}" || true
-                  git push origin main
+                  git push origin master
                 """
             }
         }
